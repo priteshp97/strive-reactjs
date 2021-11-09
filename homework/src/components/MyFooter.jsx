@@ -1,6 +1,6 @@
 const MyFooter = (props) => (
   <footer>
-    <p>2021 &copy Pritesh Patel</p>
+    <p>2021 @ Pritesh Patel</p>
   </footer>
 );
 
