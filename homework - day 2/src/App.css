@@ -53,5 +53,5 @@ footer {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
-  row-gap: 1rem;
+  row-gap: 2rem;
 }
