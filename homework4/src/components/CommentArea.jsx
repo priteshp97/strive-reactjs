@@ -17,6 +17,7 @@ class CommentArea extends React.Component {
             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyOTRjYWFhY2FhMjAwMTU1MmExOWMiLCJpYXQiOjE2MzY2NDA4MTMsImV4cCI6MTYzNzg1MDQxM30.6S5r2YYEMdcMQ7lcVnnuiD9wSaqANva-uY-3tUqRLKw",
         },
       };
+
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/comments/",
         headers
@@ -40,7 +41,7 @@ class CommentArea extends React.Component {
     return (
       <div>
         {this.state.comments
-          .filter((res) => res.elementId.includes(this.props.book.asin))
+          .filter((res) => res.elementId.includes(this.props.comments.asin))
           .map((res) => (
             <div key={res._id}>{res.comment}</div>
           ))}

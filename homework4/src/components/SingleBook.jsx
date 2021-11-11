@@ -20,7 +20,7 @@ class SingleBook extends React.Component {
         <Card.Body>
           <Card.Title>{this.props.book.title}</Card.Title>
         </Card.Body>
-        {this.state.selected && <CommentArea book={this.props.book} />}
+        {this.state.selected && <CommentArea comments={this.props.book} />}
         {this.state.selected && console.log(this.props.book.asin)}
       </Card>
     );
