@@ -9,7 +9,7 @@ class MovieDetails extends Component {
   fetchMovieData = async () => {
     try {
       let response = await fetch(
-        "http://www.omdbapi.com/?apikey=24ad60e9&s=" + this.props.movieTitle
+        "http://www.omdbapi.com/?apikey=b2d7b7f8&s=" + this.props.movieTitle
       );
       if (response.ok) {
         let data = await response.json();
