@@ -1,7 +1,5 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { Component } from "react";
 import DropDown from "./components/DropDown";
 
 // we're going to create a movie chooser app

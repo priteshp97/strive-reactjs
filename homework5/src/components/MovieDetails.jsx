@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 
 class MovieDetails extends Component {
   state = {
-    movieDetails: null,
+    movieDetails: [],
   };
 
   fetchMovieData = async () => {
@@ -13,9 +13,8 @@ class MovieDetails extends Component {
       );
       if (response.ok) {
         let data = await response.json();
-        console.log(data.Search[0]);
         this.setState({
-          movieDetails: data.Search[0],
+          movieDetails: data.Search,
         });
       } else {
         console.log("error in fetching movie");
@@ -37,19 +36,17 @@ class MovieDetails extends Component {
 
   render() {
     return (
-      <>
-        {this.state.movieDetails ? (
-          <Card>
-            <Card.Img src={this.state.movieDetails.Poster} />
+      <div className="movies">
+        {this.state.movieDetails.map((res) => (
+          <Card className="movie">
+            <Card.Img src={res.Poster} />
             <Card.Body className="text-dark">
-              <Card.Title>{this.state.movieDetails.Title}</Card.Title>
-              <Card.Text>{this.state.movieDetails.Year}</Card.Text>
+              <Card.Title>{res.Title}</Card.Title>
+              <Card.Text>{res.Year}</Card.Text>
             </Card.Body>
           </Card>
-        ) : (
-          <p>Movie loading...</p>
-        )}
-      </>
+        ))}
+      </div>
     );
   }
 }

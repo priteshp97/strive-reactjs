@@ -46,7 +46,7 @@ class DropDown extends Component {
         </Row>
         {this.state.showMovieSection && (
           <Row className="justify-content-center">
-            <Col xs={12} md={6}>
+            <Col>
               <MovieDetails movieTitle={this.state.movieTitle} />
             </Col>
           </Row>
