@@ -10,17 +10,15 @@ import MovieDetails from "./components/MovieDetails";
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <MyNavBar />
-        <Routes>
-          <Route path="/" element={<TrendingNowList title="harry-potter" />} />
-          <Route path="/tvshows" element={<TvShows />} />
-          <Route path="/movie-details/:movieId" element={<MovieDetails />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <MyNavBar />
+      <Routes>
+        <Route path="/" element={<TrendingNowList title="harry-potter" />} />
+        <Route path="/tvshows" element={<TvShows />} />
+        <Route path="/movie-details/:movieId" element={<MovieDetails />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
