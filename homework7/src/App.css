@@ -1,0 +1,14 @@
+body {
+  background-color: rgb(20, 20, 20) !important;
+}
+nav {
+  background-color: rgb(20, 20, 20);
+}
+h4 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.navbar img {
+  width: 120px !important;
+}

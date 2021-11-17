@@ -8,6 +8,7 @@ const CommentArea = (props) => {
   const [comments, setComments] = useState([]);
   const [isLoading, setisLoading] = useState(false);
   const [isError, setisError] = useState(false);
+  console.log(props.asin);
 
   useEffect(() => {
     getComments();
