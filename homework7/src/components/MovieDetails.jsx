@@ -1,42 +1,46 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, setState } from "react";
 import { useParams } from "react-router-dom";
 
 const MovieDetails = (props) => {
-  //   const [movie, setMovie] = useState(undefined);
+  const [mov, setMov] = useState(undefined);
 
   const params = useParams();
   console.log(params);
 
   useEffect(() => {
-    movie();
+    movies();
   }, []);
 
-  const movie = async () => {
+  const movies = async () => {
     try {
       let response = await fetch(
         "https://www.omdbapi.com/?apikey=b2d7b7f8&i=" + params.movieId
       );
       if (response.ok) {
         let data = await response.json();
-        // this.setState({
-        //   movies: data.Search,
-        //   isLoading: false,
-        // });
-        console.log(this.state.movies2);
+        console.log(data);
+        setMov(data);
+        console.log(mov);
       } else {
-        // if we fall here we're getting an error, maybe a 404
-        // this.setState({
-        //   isLoading: false,
-        //   isError: true,
-        // });
+        console.log("error");
       }
     } catch (error) {
-      //   this.setState({
-      //     isLoading: false,
-      //     isError: true,
-      //   });
+      console.log(error);
     }
   };
+
+  return (
+    <section>
+      {mov ? (
+        <>
+          <img src={mov.Poster} alt="" />
+          <p>{mov.Title + " | " + mov.Year}</p>
+        </>
+      ) : (
+        <h1>error</h1>
+      )}
+    </section>
+  );
 };
 
 export default MovieDetails;
