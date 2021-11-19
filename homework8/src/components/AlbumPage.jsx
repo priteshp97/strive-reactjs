@@ -44,7 +44,7 @@ const AlbumPage = () => {
 
   return (
     <>
-      {album !== [] ? (
+      {album !== {} ? (
         <>
           <section id="album">
             <div className="wrap">
@@ -65,11 +65,11 @@ const AlbumPage = () => {
                       className="small-artist-img"
                     />
                     <a href="./artist.html" className="album-link">
-                      {album.artist.name}
+                      {album?.artist?.name}
                     </a>
                     <span className="detail-span">
-                      - {album.release_date.substring(0, 4)} - $
-                      {album.tracks.data.length} songs, 1 hr 27 min
+                      - {album?.release_date} - {album?.tracks?.data.length}
+                      songs, 1 hr 27 min
                     </span>
                   </h3>
                 </div>
