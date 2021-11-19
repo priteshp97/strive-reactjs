@@ -10,6 +10,7 @@ import {
   faWindowMaximize,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import { Nav } from "react-bootstrap";
 
 const AlbumPage = () => {
   const [album, setAlbum] = useState([]);
