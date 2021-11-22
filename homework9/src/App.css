@@ -6,6 +6,7 @@
   margin: 0 auto;
   max-width: 1400px;
   margin-top: 3rem;
+  justify-items: center;
 }
 
 #form {
@@ -29,4 +30,8 @@
 
 .company {
   font-weight: bold;
+}
+
+.company-title {
+  text-align: center;
 }
