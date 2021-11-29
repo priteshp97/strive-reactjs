@@ -4,28 +4,35 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { getJobsAction } from "../actions";
 import { getSearchAction } from "../actions";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
-const mapStateToProps = (state) => ({
-  favouritesLength: state.favourites.fav.length,
-  jobResults: state.jobs.content,
-  searchContent: state.search.content,
-});
+// const mapStateToProps = (state) => ({
+//   favouritesLength: state.favourites.fav.length,
+//   jobResults: state.jobs.content,
+//   searchContent: state.search.content,
+// });
 
-const mapDispatchToProps = (dispatch) => ({
-  getJobs: (search) => {
-    dispatch(getJobsAction(search));
-  },
-  // getSearch: function (searchContent) {
-  //   dispatch(getSearchAction(searchContent));
-  // },
-});
+// const mapDispatchToProps = (dispatch) => ({
+//   getJobs: (search) => {
+//     dispatch(getJobsAction(search));
+//   },
+// getSearch: function (searchContent) {
+//   dispatch(getSearchAction(searchContent));
+// },
+// });
 
 const SearchPage = (props) => {
   // const [jobs, setJobs] = useState([]);
   const [search, setSearch] = useState("");
 
+  const dispatch = useDispatch();
+  const favouritesLength = useSelector((state) => state.favourites.fav.length);
+  const jobResults = useSelector((state) => state.jobs.content);
+  const searchContent = useSelector((state) => state.search.content);
+
   useEffect(async () => {
-    props.getJobs();
+    dispatch(getJobsAction());
   }, []);
 
   // const fetchJobs = async () => {
@@ -49,7 +56,7 @@ const SearchPage = (props) => {
   return (
     <>
       <Link to={"/favourites/"}>
-        <a href="#">Favourites ({props.favouritesLength})</a>
+        <a href="#">Favourites ({favouritesLength})</a>
       </Link>
       <form id="form">
         <input
@@ -63,7 +70,7 @@ const SearchPage = (props) => {
         <button type="submit">Search</button>
       </form>
       <div className="container">
-        {props.jobResults.map((job) => (
+        {jobResults.map((job) => (
           <SingleJob jobs={job} />
         ))}
       </div>
@@ -71,4 +78,4 @@ const SearchPage = (props) => {
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);
+export default SearchPage;
