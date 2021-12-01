@@ -10,9 +10,15 @@
 img {
   display: block;
   width: 100%;
+  object-fit: cover;
 }
 
 form {
   text-align: center;
   margin: 2rem 0;
+}
+
+.detail {
+  max-width: 1200px;
+  margin: 0 auto;
 }
