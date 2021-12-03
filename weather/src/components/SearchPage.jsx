@@ -37,7 +37,7 @@ const SearchPage = () => {
         setIcons("wi wi-rain");
         break;
       default:
-        setIcons("wi wi-cloudy");
+        setIcons("");
     }
   };
 
