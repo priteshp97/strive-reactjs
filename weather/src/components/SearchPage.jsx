@@ -79,11 +79,12 @@ const SearchPage = () => {
             onChange={(e) => setSearch(e.target.value)}
           />
         </form>
+        <i className="wi wi-towards-e icon"></i>
       </div>
 
       <div class="card">
         <div class="main">
-          <div class="icon">
+          <div class="icons">
             <i className={icons}></i>
             <p>{weather?.weather[0].main}</p>
           </div>
